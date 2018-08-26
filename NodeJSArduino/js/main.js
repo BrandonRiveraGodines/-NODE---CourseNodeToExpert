@@ -1,0 +1,175 @@
+const socket = io();
+socket.on('temp', function(data) {
+    //if (data === 'Registro') {
+    //  $("#testmodalIntID").modal('hide');
+    //$("#testmodalRegistro").modal('show');
+    //$("#ImageTaken").modal('hide');
+    //}
+    switch (data) {
+        case "Registro":
+            $("#testmodalRegistro").modal('show');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Image taken":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('show');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "No finger detected":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('show');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Communication error":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('show');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Imaging error":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('show');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Unknown error":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('show');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Image converted":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('show');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Image too messy":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('show');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Could not find fingerprint features":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('show');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Found a print match!":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('show');
+            $("#DidNotFoundAPrintMatch").modal('hide');
+            break;
+        case "Did not find a match":
+            $("#testmodalRegistro").modal('hide');
+            $("#testmodalIntID").modal('hide');
+            $("#testmodalLogin").modal('hide');
+            $("#ImageTaken").modal('hide');
+            $("#NoFingerDetected").modal('hide');
+            $("#CommunicationError").modal('hide');
+            $("#ImagingError").modal('hide');
+            $("#UnknownError").modal('hide');
+            $("#ImageConverted").modal('hide');
+            $("#ImageTooMessy").modal('hide');
+            $("#CouldNotFindFingerprintFeautures").modal('hide');
+            $("#FoundAPrintMatch").modal('hide');
+            $("#DidNotFoundAPrintMatch").modal('show');
+            break;
+    }
+});

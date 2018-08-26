@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sistema de huellas para el INE</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+</head>
+
+<body>
+    <!-- FAVOR DE REGISTRAR SU HUELLA -->
+    <div id="testmodalRegistro" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Registrar huella</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Favor de registarse colocando su huella en el lector.</p>
+                    <p class="text-warning"><small>Mantenga su dedo en el lector de huella, hasta que se le confirme.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAVOR DE INGRESAR UN ID PARA LA HUELLA -->
+    <div id="testmodalIntID" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Introducir ID de la huella</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/myform" method="get">
+                        <div class="form-group">
+                            <input type="number" required class="form-control" name="mytext" size="2" min="1" max="100" id="insertID" placeholder="Introduce un ID para la huella">
+                            <button type="submit" class="btn btn-success show-modalRegister">Enviar</button>
+                        </div>
+                    </form>
+                    <p class="text-warning"><small>El ID debe tener un valor entre 1 y 100</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAVOR DE ENTRAR AL SISTEMA USANDO SU HUELLA -->
+    <div id="testmodalLogin" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Entrar al sistema</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Favor de entrar al sistema colocando su huella en el lector.</p>
+                    <p class="text-warning pink-text"><small>Mantenga su dedo en el lector de huella, hasta que se le confirme.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Image taken-->
+    <div id="ImageTaken" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ÉXITO</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Se realizó el escaneo del dedo éxitosamente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--No finger detected-->
+    <div id="NoFingerDetected" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>No se ha detectado huella alguna.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Communication error-->
+    <div id="CommunicationError" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Hubó un error con el sensor de huellas, contacte con el administrador.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Imaging error-->
+    <div id="ImagingError" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Hubó un error al momento de guardar la huella, contacte con el administrador.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Unknown error-->
+    <div id="UnknownError" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Hubó un error desconocido, contacte con el administrador.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Image converted-->
+    <div id="ImageConverted" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ÉXITO</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Imagen convertida exitosamente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Image too messy-->
+    <div id="ImageTooMessy" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Imagen sucía, limpie el lector de huellas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Could not find fingerprint features-->
+    <div id="CouldNotFindFingerprintFeautures" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ERROR</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Imagen sucía, limpie el lector de huellas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Found a print match!-->
+    <div id="FoundAPrintMatch" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ÉXITO</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Se ha encontrado una huella.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Did not find a match-->
+    <div id="DidNotFoundAPrintMatch" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">AVISO</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>No se ha encontrado una huella.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <center>
+                <img src="img/ine.png" class="img-fluid img-responsive" />
+            </center>
+            <div class="container">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-lg-5 col-sm-12">
+                        <div type="button" id="element" class="btn btn-primary btn-lg btn-block boton-background show-modalInsertID">Registrar huella</div>
+                    </div>
+                    <div class="col-lg-2 col-sm-12"></div>
+                    <div class="col-lg-5 col-sm-12">
+                        <div type="button" id="element2" class="btn btn-primary btn-lg btn-block boton-background show-modalLogin">Entrar al sistema</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>

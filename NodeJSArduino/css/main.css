@@ -1,0 +1,64 @@
+.form-group {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    top: 50%;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.popup-overlay {
+    visibility: hidden;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    background: #ffffff;
+    vertical-align: middle;
+}
+
+.popup-content {
+    visibility: hidden;
+}
+
+.popup-overlay.active {
+    visibility: visible;
+    text-align: center;
+}
+
+.popup-content.active {
+    visibility: visible;
+}
+
+.modal {
+    text-align: center;
+    padding: 0!important;
+}
+
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+    /* Adjusts for spacing */
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.boton-background {
+    background: #D22881;
+}
+
+.boton-background:hover {
+    background: #ffffff;
+    color: #D22881;
+}
